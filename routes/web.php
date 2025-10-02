@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TokenAuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/home', function () { return inertia('Home'); })
@@ -22,3 +23,7 @@ Route::view('/register', 'register')
     ->name('register');
 Route::post('/register', RegisterController::class)
     ->name('register.store');
+
+//
+
+Route::get('/token-login', [TokenAuthController::class, 'tokenLogin']);
