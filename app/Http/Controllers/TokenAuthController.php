@@ -75,7 +75,6 @@ class TokenAuthController extends Controller
             ], 422);
         }
 
-
         $credentials = $request->only('email', 'password');
 
         if (!$token = auth('api')->attempt($credentials)) {
@@ -103,7 +102,6 @@ class TokenAuthController extends Controller
      */
     function logout(): JsonResponse {
         auth('api')->logout();
-
         return response()->json([
             'success' => true,
             'message' => 'Successfully logged out'
