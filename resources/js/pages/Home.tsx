@@ -42,7 +42,6 @@ export default () => {
                 <input type="radio" id="itau" name="itau" value="itau" />
                 <label htmlFor="itau">Itaú</label>
             </fieldset>
-            <a href="/logout">Logout</a>
         </form>
     )
 }

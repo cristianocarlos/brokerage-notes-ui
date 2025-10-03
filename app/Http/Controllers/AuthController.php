@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 
-class IntegrationController
+class AuthController
 {
   function token(): JsonResponse {
       $curl = curl_init();
