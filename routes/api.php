@@ -6,13 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/auth/token', [IntegrationController::class, 'token']);
 
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/refresh', [AuthController::class, 'refresh']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::post('/access-token-refresh', [AuthController::class, 'refresh']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::get('/me', [AuthController::class, 'me']);
-    Route::get('/user', [AuthController::class, 'user']);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
     // Example protected route
     Route::get('/protected-data', function () {
         return response()->json([
